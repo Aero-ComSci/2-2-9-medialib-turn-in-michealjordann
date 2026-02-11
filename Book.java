@@ -1,8 +1,3 @@
-/*
- * Activity 2.2.7
- *
- * A Book class for the MediaLibrary program
- */
 public class Book
 {
   private String title;
@@ -31,12 +26,10 @@ public class Book
   public String toString() 
   {
     String info = "\"" + title + "\", written by " + author;
-    
     if (rating != 0) 
     { 
       info += ", rating is " + rating;
     }
-    
     return info;
   }
 
@@ -49,6 +42,7 @@ public class Book
   }
 
   public void adjustRating(int r) {
+    System.out.println("Adjusting rating by " + r);
     int newRating = rating + r;
     if (newRating >= 0 && newRating <= 10) {
       rating = newRating;
