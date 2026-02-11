@@ -59,7 +59,7 @@ public class MediaLib
   
   public static int getNumEntries()
   {
-    System.out.println("Test: Owner is " + owner);
+    System.out.println("Owner: " + owner);
     return numEntries;
   }
   
