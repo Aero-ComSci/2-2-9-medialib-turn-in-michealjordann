@@ -1,6 +1,3 @@
-/*
- * Activity 2.2.9
- */
 public class MediaLib
 {
   public static String owner = "PLTW";
@@ -13,6 +10,12 @@ public class MediaLib
   private Book book;
   private Movie movie;
   private Song song;
+  private String lastModified;
+  
+  public MediaLib()
+  {
+    lastModified = DateUtil.getDateTime();
+  }
   
   public void addBook(Book b)
   {
@@ -21,6 +24,7 @@ public class MediaLib
       book = b;
       numEntries++;
       numBooks++;
+      lastModified = DateUtil.getDateTime();
     } 
     else
       System.out.println("Cannot add a new book: A book already exists");
@@ -33,6 +37,7 @@ public class MediaLib
       movie = m;
       numEntries++;
       numMovies++;
+      lastModified = DateUtil.getDateTime();
     }
     else
       System.out.println("Cannot add a new movie: A movie already exists");
@@ -45,6 +50,7 @@ public class MediaLib
       song = s;
       numEntries++;
       numSongs++;
+      lastModified = DateUtil.getDateTime();
     }
     else
       System.out.println("Cannot add a new song: A song already exists");
@@ -90,6 +96,8 @@ public class MediaLib
       info += "Movie: " + movie + "\n";
     if (song != null)
       info += "Song: " + song + "\n";
+    
+    info += "Last Modified: " + lastModified + "\n";
  
     return info;
   }
